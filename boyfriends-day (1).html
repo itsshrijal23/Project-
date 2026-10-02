@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Boyfriend's Day 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Allura&family=Playball&family=Caveat+Brush&family=Special+Elite&family=Gaegu:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e5155f;--rose:#f0467f;--ink:#2b2b2b;--hand:'Reenie Beanie','Caveat Brush',cursive;--marker:'Caveat Brush','Reenie Beanie',cursive;--script:'Playball',cursive;--type:'Special Elite','Courier New',monospace;
+ --s1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0467f' d='M12 1l3.1 7.3 7.9.7-6 5.2 1.8 7.8L12 17.9 5.2 22l1.8-7.8-6-5.2 7.9-.7z'/%3E%3C/svg%3E");
+ --s2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24'%3E%3Cpath fill='%2342bfd6' d='M12 1l3.1 7.3 7.9.7-6 5.2 1.8 7.8L12 17.9 5.2 22l1.8-7.8-6-5.2 7.9-.7z'/%3E%3C/svg%3E")}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:var(--type);color:var(--ink);overflow:hidden;--p:clamp(52px,7.2vw,104px);
+ background:repeating-linear-gradient(180deg,#c8e8f3 0,#c8e8f3 calc(var(--p)*.56),#fcf0a4 calc(var(--p)*.56),#fcf0a4 var(--p))}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.screen{z-index:1;position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;padding:18px 18px 80px;overflow:auto}
+.screen.on{display:flex;animation:dis .6s ease both}
+@keyframes dis{from{opacity:0;filter:blur(9px)}to{opacity:1;filter:blur(0)}}
+/* entrance animations (use individual transform props so they never fight inline rotations) */
+.screen.on .a{animation:var(--k,fadeIn) var(--t,.8s) cubic-bezier(.2,.85,.3,1) backwards;animation-delay:var(--d,0s)}
+.fd{--k:fadeIn}.up{--k:upIn;--t:1s}.lf{--k:leftIn;--t:.9s}.rt{--k:rightIn;--t:.9s}.pp{--k:popIn;--t:.55s}.wp{--k:wipe;--t:1.3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes upIn{from{opacity:0;translate:0 70vh}to{opacity:1;translate:0 0}}
+@keyframes leftIn{from{opacity:0;translate:-60vw 0}to{opacity:1;translate:0 0}}
+@keyframes rightIn{from{opacity:0;translate:60vw 0}to{opacity:1;translate:0 0}}
+@keyframes popIn{0%{opacity:0;scale:.2}70%{opacity:1;scale:1.18}100%{opacity:1;scale:1}}
+@keyframes wipe{from{clip-path:inset(-20% 100% -20% 0)}to{clip-path:inset(-20% -5% -20% 0)}}
+@keyframes show{to{opacity:1}}
+.ch{display:inline-block}.wd{display:inline-block;white-space:nowrap}
+.screen.on .ch{opacity:0;animation:popIn .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--d,0s) + var(--i)*.08s)}
+.screen.on .tw .ch,.screen.on .tw.ch{animation:show .02s linear both;animation-delay:calc(var(--d,0s) + var(--i)*.07s)}
+@keyframes blink{50%{opacity:.35;translate:var(--x,7px) 0}}
+@keyframes bob{50%{translate:0 -7px}}
+@keyframes tw{50%{transform:scale(.65) rotate(25deg);opacity:.7}}
+.sp{position:absolute;width:clamp(36px,9vw,58px);aspect-ratio:1;background:#ffc82e;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);animation:tw 1.7s ease-in-out infinite;animation-delay:var(--d,0s)}
+.hwrap{position:relative;cursor:pointer}
+/* arrows */
+.nav{position:fixed;bottom:22px;z-index:9;border:0;background:none;cursor:pointer;width:64px;height:44px;transition:.2s}
+.nav svg{width:100%;height:100%;animation:blink 1.6s ease-in-out infinite}.nav.l svg{--x:-7px}.nav:hover{transform:scale(1.15)}
+.nav.l{left:22px}.nav.r{right:22px}
+/* intro */
+.heart{width:min(86vw,420px);aspect-ratio:1/.92;background:linear-gradient(135deg,#f21b68,#d90f58);cursor:pointer;display:grid;place-items:center;
+ -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M50 90C15 62 0 44 0 26 0 11 12 0 27 0c10 0 18 5 23 14C55 5 63 0 73 0c15 0 27 11 27 26 0 18-15 36-50 64z'/%3E%3C/svg%3E") center/contain no-repeat;
+ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M50 90C15 62 0 44 0 26 0 11 12 0 27 0c10 0 18 5 23 14C55 5 63 0 73 0c15 0 27 11 27 26 0 18-15 36-50 64z'/%3E%3C/svg%3E") center/contain no-repeat;animation:beat 1.6s infinite}
+@keyframes beat{50%{transform:scale(1.05)}}
+.heart span{font-family:var(--hand);font-size:clamp(46px,11vw,78px);color:#fff;text-align:center;line-height:.9;transform:rotate(-8deg)}
+.hint{margin-top:14px;font-family:var(--hand);font-size:32px;color:var(--pink)}
+/* gifts */
+.sel{position:relative;font-family:'Allura','Playball',cursive;font-size:clamp(40px,8.4vw,80px);line-height:1.1;color:#e0264f;padding:6px clamp(26px,5vw,60px) 8px;margin:6px 0 clamp(8px,3vw,28px);
+ background:linear-gradient(90deg,#fbd9c0cc,#f8d2dfcc);text-shadow:0 1px 0 #fff8}
+.sel::before,.sel::after{content:'';position:absolute;width:26px}
+.sel::before{left:-13px;top:-30px;height:calc(100% + 30px);background:radial-gradient(circle at 13px 13px,#f68fb1 13px,transparent 13.6px) top/26px 26px no-repeat,linear-gradient(#f06b95,#f06b95) 12px 13px/2px calc(100% - 13px) no-repeat}
+.sel::after{right:-13px;bottom:-30px;height:calc(100% + 30px);background:radial-gradient(circle at 13px 13px,#f68fb1 13px,transparent 13.6px) bottom/26px 26px no-repeat,linear-gradient(#f06b95,#f06b95) 12px 0/2px calc(100% - 13px) no-repeat}
+#s-gifts{justify-content:flex-start;padding-top:clamp(40px,8vh,90px)}
+.gifts{display:flex;flex-wrap:wrap;justify-content:space-around;width:min(98vw,1150px);padding:0 0 60px}
+.gift{background:none;border:0;cursor:pointer;width:clamp(150px,41vw,300px);transition:transform .25s;filter:drop-shadow(0 10px 8px #0003);margin-top:0;rotate:-6deg}
+.gift:nth-child(4n+2){margin-top:clamp(60px,14vw,150px);width:clamp(135px,37vw,270px);rotate:2deg}
+.gift:nth-child(4n+3){rotate:-3deg;margin-top:clamp(0px,1vw,10px)}
+.gift:nth-child(4n){margin-top:clamp(50px,12vw,130px);width:clamp(135px,37vw,270px);rotate:-2deg}
+@media(min-width:760px){.gift{width:clamp(200px,23vw,300px)}.gift:nth-child(4n+2),.gift:nth-child(4n){width:clamp(180px,21vw,270px)}}
+.gift svg{width:100%;display:block;overflow:visible;animation:bob 3.4s ease-in-out infinite;animation-delay:calc(var(--i)*-.55s)}
+.gift:hover{transform:scale(1.1)}
+/* shared */
+.ph{background:#f3e6ea center/cover no-repeat;display:grid;place-items:center;color:#e5155f99;font-size:11px;text-align:center;cursor:pointer;overflow:hidden}
+.ph.has{color:transparent}.ph:not(.has)::after{content:'📷 tap to add'}
+.pol{background:#fff;padding:7px 7px 26px;box-shadow:0 6px 14px #0003;position:relative}
+.pol .ph{width:140px;height:140px}
+.pol.pk{background:var(--rose);padding:7px 7px 7px}.pol.dot{background:radial-gradient(circle,#fff 2px,transparent 2.5px) 0 0/10px 10px,var(--rose);padding:12px 12px 28px}
+.star{width:70px;height:70px;position:absolute;background:var(--pink);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.hw{font-family:var(--hand);color:var(--pink);line-height:.9}
+/* letter */
+.row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.pretty{font-family:var(--marker);font-size:clamp(54px,11vw,96px);color:#e0305f;text-align:center;line-height:.85;transform:rotate(-6deg);text-shadow:2px 2px 0 #f7a1bb}
+.kraft{background:#e9dcc3;max-width:460px;padding:30px 24px 22px;box-shadow:0 8px 20px #0003;font-size:13px;line-height:1.55;position:relative;transform:rotate(.6deg)}
+.kraft::before{content:'';position:absolute;top:-14px;left:46%;width:26px;height:26px;border-radius:50%;background:#e8326f;box-shadow:inset -3px -3px 0 #a8164a}
+.kraft p+p{margin-top:9px}
+/* film */
+.film{display:flex;gap:10px;background:#1c1c1c;padding:26px 12px;transform:rotate(-5deg);box-shadow:0 8px 20px #0004;position:relative;max-width:98vw;overflow:hidden;border:3px solid #777}
+.film::before,.film::after{content:'';position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#ddd 0 12px,transparent 12px 22px)}
+.film::before{top:7px}.film::after{bottom:7px}
+.film .ph{width:120px;height:150px;flex:none;background-color:#444}
+.ily{font-family:var(--marker);font-size:clamp(50px,10vw,84px);color:#e5155f;display:inline-block;transform:rotate(-8deg);margin:0 0 8px;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff}
+.lined{width:min(88vw,560px);padding:24px;background:#f1e9d2 repeating-linear-gradient(0deg,transparent 0 27px,#b9c9d8 27px 28px);box-shadow:0 8px 18px #0003;transform:rotate(-1.5deg)}
+.frs{display:flex;gap:18px;justify-content:center}
+.fr{padding:10px;border-radius:22px;box-shadow:0 6px 12px #0003;position:relative}.fr.b{background:#a9c9ee}.fr.p{background:#e5155f}
+.fr .ph{width:min(34vw,140px);height:min(44vw,180px);background-color:#222;border-radius:12px}
+.fr .star{width:38px;height:38px;right:-12px;top:-12px;background:#8aa31a}
+.mybf{font-family:var(--marker);font-size:clamp(54px,12vw,96px);color:#e5155f;line-height:.85;text-align:center;margin-top:14px}
+/* reasons */
+.stamp{background:radial-gradient(circle at 10px 10px,#cdeaf4 6px,transparent 7px) 0 0/22px 22px,var(--rose);padding:20px;max-width:340px}
+.stamp>div{background:#fff;padding:16px 18px;font-family:var(--type)}
+.stamp h3{font-family:var(--hand);font-size:36px;font-weight:400;color:var(--pink);margin-bottom:8px}
+.stamp li{list-style:none;font-size:13px;line-height:1.7}
+/* vinyl */
+.vw{position:relative;width:min(92vw,440px);aspect-ratio:1}
+.vinyl{position:absolute;inset:6%;border-radius:50%;background:repeating-radial-gradient(#111 0 3px,#222 3px 4px);box-shadow:0 10px 25px #0005;animation:spin 14s linear infinite}
+.vinyl::after{content:'';position:absolute;inset:34%;border-radius:50%;background:radial-gradient(#fff 0 8%,var(--rose) 9%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.vw .pol{position:absolute}.vw .pol .ph{width:84px;height:84px}
+.vw .pol{padding:5px 5px 5px}.vw .n{position:absolute;font-family:var(--hand);font-size:34px;color:#43bfd6;font-weight:700}
+.play{position:absolute;inset:0;margin:auto;width:34px;height:34px;border-radius:50%;background:#ffffffcc;display:grid;place-items:center;color:var(--rose);font-size:14px;pointer-events:none}
+/* fav */
+.fav{font-family:var(--hand);color:var(--pink);font-size:clamp(84px,22vw,170px);line-height:.85;text-align:center;letter-spacing:3px}
+.fav .hr{display:inline-block;width:.95em;height:.85em;vertical-align:-.12em;clip-path:url(#hc);transform:scale(1.5);transform-origin:50% 55%;margin:0 clamp(8px,2.2vw,18px)}
+.fav .hr.ph:not(.has)::after{content:'📷';font-size:28px}
+.fav .hr.ph{width:clamp(70px,18.5vw,142px);height:clamp(64px,17vw,130px);vertical-align:-.06em;background-color:#f6d3df;font-size:12px;line-height:1.2;letter-spacing:0;font-family:var(--type)}
+/* reminder */
+.card{background:#fff;padding:30px 36px 24px;border-radius:16px;box-shadow:0 12px 28px #0003;text-align:center;max-width:340px;transform:rotate(-3deg)}
+.card h5{font-family:var(--type);font-size:18px;letter-spacing:1px}
+.card p{font-family:var(--hand);font-size:62px;line-height:.85;color:var(--pink);margin:6px 0 16px}
+.card button{border:0;background:#f4f4f4;border-radius:10px;padding:8px 36px;font-family:var(--type);font-size:15px;cursor:pointer}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><clipPath id="hc" clipPathUnits="objectBoundingBox"><path d="M.5 1C.15 .7 0 .5 0 .3 0 .13 .12 0 .27 0c.1 0 .18 .05 .23 .15C.55 .05 .63 0 .73 0c.15 0 .27 .13 .27 .3 0 .2-.15 .4-.5 .7z"/></clipPath></svg>
+<svg id="bg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+<!-- INTRO -->
+<section class="screen on" id="s-intro">
+  <div class="hwrap a pp" onclick="go('s-title')"><div class="heart"><span>happy<br>boyfriend<br>day</span></div>
+    <i class="sp" style="top:-6%;right:-3%"></i><i class="sp" style="bottom:2%;left:-5%;--d:.7s"></i></div>
+  <div class="hint">tap to open ♡</div>
+  <button class="nav r" onclick="go('s-title')" data-a="r"></button>
+</section>
+
+<!-- TITLE (lined paper) -->
+<section class="screen" id="s-title">
+  <div class="lined a fd"><div class="frs" data-stag=".fr|.3|.45|lf">
+    <div class="fr b"><div class="ph"></div></div>
+    <div class="fr p"><i class="star"></i><div class="ph"></div></div>
+  </div></div>
+  <div class="mybf" data-split data-tilt style="--d:1.3s">my boyfriend</div>
+  <button class="nav l" onclick="go('s-intro')" data-a="l"></button>
+  <button class="nav r" onclick="go('s-gifts')" data-a="r"></button>
+</section>
+
+<!-- GIFTS -->
+<section class="screen" id="s-gifts">
+  <div class="sel a fd"><span class="a wp" style="--d:.3s;display:inline-block">select any gift</span></div>
+  <div class="gifts" id="gifts"></div>
+  <button class="nav l" onclick="go('s-title')" data-a="l"></button>
+</section>
+
+<!-- LETTER -->
+<section class="screen" id="s-letter">
+  <div class="row">
+    <div class="pretty tw" data-split style="--d:.2s">My<br>pretty<br>boy&lt;3</div>
+    <div class="kraft a rt" style="--d:.3s" data-stag="p|1.1|.3|fd">
+      <p>To my favourite boy, ♥</p>
+      <p>Happy Boyfriend's Day to the person who somehow makes my ordinary days feel a little more special. You're honestly the best—not because you're perfect, but because you're you.</p>
+      <p>The way you care, make me laugh, put up with my nonsense, and make me feel loved means more to me than I can ever properly explain.</p>
+      <p>I hope you always know how much you mean to me. I'm so lucky to call you mine, and if I had to choose all over again, I'd still choose you.</p>
+      <p>You're my favourite person, my safe place, and my forever cutie.</p>
+      <p>I love you. Always.</p>
+    </div>
+  </div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- FILM -->
+<section class="screen" id="s-film">
+  <div style="text-align:center"><div class="ily" data-split data-tilt style="--d:.2s">i love you.</div></div>
+  <div class="film a rt" style="--d:.1s" data-stag=".ph|.8|.2|pp"><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+  <div class="hw a fd" style="font-size:36px;margin-top:14px;text-align:center;--d:1.9s">I just can't get enough of us ♡</div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- REASONS -->
+<section class="screen" id="s-reasons">
+  <div class="row">
+    <div class="pol a lf" style="transform:rotate(-4deg);--d:.5s"><div class="star" style="left:-34px;top:-30px"></div><div class="ph" style="width:170px;height:170px"></div></div>
+    <div class="stamp a fd"><div>
+      <h3 class="a wp" style="--d:1s">Reasons why I love you</h3>
+      <ul data-stag="li|2|.22|fd">
+        <li>you are so special</li><li>you are loving</li><li>you always work hard</li>
+        <li>you are handsome (ofc hehe)</li><li>you always make me smile</li>
+        <li>you are my fav sweetest thing</li><li>you are cute, you are always there</li>
+      </ul>
+    </div></div>
+  </div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- SONGS -->
+<section class="screen" id="s-songs">
+  <div class="hw a wp" style="font-size:clamp(38px,8vw,60px);margin-bottom:6px;--d:.6s;--t:1.8s">songs that remind me of you</div>
+  <div class="vw" data-stag=".n,.pol|1.7|.25|pp">
+    <div class="a up" style="position:absolute;inset:0"><div class="vinyl"></div></div>
+    <div class="n" style="left:2%;top:50%">1.</div>
+    <div class="pol pk" style="left:6%;top:56%;transform:rotate(-4deg)"><div class="ph"></div></div>
+    <div class="n" style="left:27%;top:5%">2.</div>
+    <div class="pol" style="left:28%;top:18%;transform:rotate(3deg)"><div class="ph"></div></div>
+    <div class="n" style="left:58%;top:5%">3.</div>
+    <div class="pol pk" style="left:58%;top:16%;transform:rotate(-3deg)"><div class="ph"></div><div class="play">▶</div></div>
+    <div class="n" style="right:0;top:48%">4.</div>
+    <div class="pol" style="right:2%;top:56%;transform:rotate(5deg)"><div class="ph"></div></div>
+  </div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- FAV PERSON -->
+<section class="screen" id="s-fav">
+  <div class="fav tw" data-split style="--d:.3s">MY FAV<br>PERS<span class="hr ph a up" style="--d:1.7s;--t:1.1s"></span>N</div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- GO BACK AGAIN -->
+<section class="screen" id="s-back">
+  <div class="hw a wp" style="font-size:clamp(38px,8vw,60px);margin-bottom:12px;text-align:center;--d:.2s;--t:1.7s">only if I could go back again</div>
+  <div class="row" style="gap:0" data-stag=".pol|1.1|.5|up">
+    <div class="pol" style="transform:rotate(-6deg);z-index:1"><div class="ph" style="width:150px;height:130px"></div></div>
+    <div class="pol dot" style="transform:rotate(3deg);margin:0 -18px;z-index:2"><div class="star" style="right:-30px;bottom:-26px;width:90px;height:90px;z-index:-1"></div><div class="ph" style="width:170px;height:170px"></div></div>
+    <div class="pol" style="transform:rotate(7deg)"><div class="ph" style="width:140px;height:150px"></div></div>
+  </div>
+  <button class="nav l" onclick="go('s-gifts')" data-a="l"></button>
+</section>
+
+<!-- REMINDER -->
+<section class="screen" id="s-card">
+  <div class="card a fd">
+    <h5 class="tw" data-split style="--d:.5s">REMINDER :</h5>
+    <p class="tw" data-split style="--d:1.4s">I LOVE you<br>always &amp; forever</p>
+    <button class="a fd" style="--d:3.8s" onclick="go('s-gifts')">back</button>
+  </div>
+</section>
+
+<script>
+/* ===== EDIT ME ===== */
+const PHOTOS = {   // optional: add image links/file names per page, or just tap any photo box to pick from your device
+  // 's-film':['1.jpg','2.jpg','3.jpg','4.jpg'],
+  // 's-reasons':['1.jpg'],
+  // 's-songs':['1.jpg','2.jpg','3.jpg','4.jpg'],
+  // 's-fav':['1.jpg'],
+  // 's-back':['1.jpg','2.jpg','3.jpg']
+};
+const GIFTS = [['my letter','s-letter'],['us','s-film'],['reasons','s-reasons'],['our songs','s-songs'],['my fav','s-fav'],['go back','s-back'],['reminder','s-card']];
+/* =================== */
+
+const box=(m,d,l)=>`<svg viewBox="0 0 200 190">
+<polygon points="24,100 120,104 120,182 28,176" fill="${m}"/><polygon points="24,100 120,104 120,182 28,176" fill="#000" opacity=".06"/>
+<polygon points="120,104 168,88 168,160 120,182" fill="${d}"/>
+<polygon points="64,98 80,99 80,180 64,177" fill="#fff"/><polygon points="64,98 80,99 80,180 64,177" fill="#d8cfd4" opacity=".35"/>
+<polygon points="140,97 148,94.5 148,168 140,172" fill="#efe8ec"/>
+<polygon points="16,78 126,84 126,106 18,102" fill="${m}"/><polygon points="16,78 126,84 126,106 18,102" fill="#fff" opacity=".08"/>
+<polygon points="126,84 176,66 176,86 126,106" fill="${d}"/>
+<polygon points="16,78 126,84 176,66 66,60" fill="${l}"/>
+<polygon points="62,80 80,81 130,63 112,62" fill="#fff"/><polygon points="62,80 80,81 80,104 62,102" fill="#fff"/><polygon points="144,78 152,75 152,92 144,95" fill="#efe8ec"/>
+<g stroke="#d9d0d5" stroke-width="1.2" stroke-linejoin="round">
+<path d="M96 66C60 14 14 34 46 62C62 74 84 72 96 66Z" fill="#fff"/><path d="M96 66C70 36 52 30 54 52C60 62 84 70 96 66Z" fill="#f1ecee"/>
+<path d="M98 66C132 8 182 30 148 60C132 74 110 72 98 66Z" fill="#fff"/><path d="M98 66C124 34 144 30 140 52C132 62 110 70 98 66Z" fill="#f1ecee"/>
+<path d="M92 70C84 90 62 98 46 100L56 112C74 106 92 94 100 76Z" fill="#fff"/><path d="M100 70C120 88 142 98 164 104L154 118C132 112 108 96 96 74Z" fill="#f6f2f4"/>
+<ellipse cx="97" cy="67" rx="9" ry="8" fill="#fff"/></g></svg>`;
+const g=document.getElementById('gifts');
+GIFTS.forEach(([n,id],i)=>{const b=document.createElement('button');b.className='gift a pp';b.style.setProperty('--d',(.9+i*.12)+'s');b.style.setProperty('--i',i);b.setAttribute('aria-label',n);
+ b.innerHTML=i%2?box('#1257cc','#0a3a95','#3f86f2'):box('#e1123f','#a30b2d','#f13b66');
+ b.onclick=()=>go(id);g.appendChild(b)});
+
+const arrow=d=>`<svg viewBox="0 0 64 44"><g fill="#e5155f" transform="${d=='l'?'translate(64 0) scale(-1 1)':''}"><polygon points="2,2 30,22 2,42 12,22"/><polygon points="32,2 60,22 32,42 42,22"/></g></svg>`;
+document.querySelectorAll('.nav').forEach(b=>b.innerHTML=arrow(b.dataset.a));
+
+
+/* random sparse stars, like the original */
+function stars(){
+ const svg=document.getElementById('bg'),W=innerWidth,H=innerHeight;
+ let seed=7;const r=()=>(seed=(seed*16807)%2147483647)/2147483647;
+ const cols=['#f0508c','#f0508c','#f7a9c4','#f7a9c4','#3dbdd3','#3dbdd3','#3dbdd3'];
+ const base=Math.max(15,Math.min(30,W*.021)),n=Math.round(W*H/24000),pts=[];let out='';
+ for(let t=0;t<n*8&&pts.length<n;t++){
+  const x=r()*W,y=r()*H,sz=base*(.6+r()*.7);
+  if(pts.some(q=>Math.hypot(q[0]-x,q[1]-y)<base*4.2))continue;
+  pts.push([x,y]);
+  out+=`<path transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(r()*72-36).toFixed(0)}) scale(${(sz/24).toFixed(2)})" fill="${cols[Math.floor(r()*cols.length)]}" stroke-linejoin="round" stroke-width="1.5" d="M0-12l3.5 8 8.5.8-6.4 5.6 2 8.4L0 6.2-7.6 11l2-8.4L-12-3.2l8.5-.8z"/>`;
+ }
+ svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=out;
+}
+stars();addEventListener('resize',stars);
+
+/* letter-by-letter text */
+function split(el){let i=0;const walk=n=>[...n.childNodes].forEach(c=>{
+ if(c.nodeType==3){const f=document.createDocumentFragment();
+  c.textContent.split(/(\s+)/).forEach(w=>{
+   if(!w)return;if(/^\s+$/.test(w)){f.append(' ');return}
+   const word=document.createElement('span');word.className='wd';
+   [...w].forEach(ch=>{const s=document.createElement('span');s.className='ch';s.textContent=ch;s.style.setProperty('--i',i++);
+    if(el.hasAttribute('data-tilt'))s.style.rotate=((i*37)%11-5)+'deg';word.append(s)});
+   f.append(word)});c.replaceWith(f)}
+ else if(c.nodeType==1&&!c.classList.contains('hr'))walk(c)});walk(el)}
+document.querySelectorAll('[data-split]').forEach(split);
+/* staggered entrance: data-stag="selector|startDelay|step|effect" */
+document.querySelectorAll('[data-stag]').forEach(el=>{
+ const [sel,b,st,k]=el.dataset.stag.split('|');
+ el.querySelectorAll(sel).forEach((c,i)=>{c.classList.add('a',k);c.style.setProperty('--d',(+b+i*st)+'s')})});
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id))}
+
+document.querySelectorAll('.screen').forEach(s=>{
+ const list=PHOTOS[s.id]||[];
+ s.querySelectorAll('.ph').forEach((p,i)=>{
+  const set=u=>{p.style.backgroundImage=`url("${u}")`;p.classList.add('has')};
+  if(list[i])set(list[i]);
+  p.onclick=()=>{const f=document.createElement('input');f.type='file';f.accept='image/*';
+   f.onchange=()=>{const r=new FileReader();r.onload=e=>set(e.target.result);r.readAsDataURL(f.files[0])};f.click()};
+ });
+});
+</script>
+</body>
+</html>
